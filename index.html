@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>나의 애착유형 심리테스트 | 나는 사랑을 어떻게 받고 싶은 걸까?</title>
+<meta name="description" content="20가지 연애 상황으로 알아보는 나의 애착유형 심리테스트. 16가지 유형 중 나는 어떤 사랑을 하고 있을까?">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="나의 애착유형 심리테스트">
+<meta property="og:description" content="나는 사랑을 어떻게 받고 싶은 걸까? 20문항으로 알아보는 나의 진짜 애착유형">
+<meta property="og:image" content="./heart-thumbnail.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="나의 애착유형 심리테스트">
+<meta name="twitter:description" content="나는 사랑을 어떻게 받고 싶은 걸까?">
+<meta name="twitter:image" content="./heart-thumbnail.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div id="particle-layer"></div>
+
+<div class="page-wrap">
+
+  <header class="site-header">
+    <h1 class="site-title">나의 애착유형 심리테스트</h1>
+    <p class="site-subtitle">나는 사랑을 어떻게 받고 싶은 걸까?</p>
+  </header>
+
+  <section id="intro-screen" class="screen glass-card active">
+    <div class="intro-emoji">💗</div>
+    <p class="intro-desc">
+      20가지 연애 상황 속 나의 선택으로 알아보는<br>
+      진짜 나의 애착유형
+    </p>
+    <ul class="intro-info">
+      <li>⏱️ 소요시간 약 3분</li>
+      <li>📝 총 20문항 · 4지선다</li>
+      <li>💌 16가지 유형 중 나의 유형 찾기</li>
+    </ul>
+    <button id="start-btn" class="btn-primary">테스트 시작하기</button>
+  </section>
+
+  <section id="quiz-screen" class="screen glass-card">
+    <div class="progress-wrap">
+      <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+      <div class="progress-text"><span id="progress-current">1</span> / 20</div>
+    </div>
+    <h2 id="question-text" class="question-text"></h2>
+    <div id="options-list" class="options-list"></div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <p class="disclosure">본 테스트는 재미로 즐기는 심리 콘텐츠이며 전문적인 심리 진단을 대신하지 않습니다.<br>이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+</footer>
+
+<script src="./data.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

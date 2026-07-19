@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>나의 애착유형 테스트 결과 | 나의 애착유형 심리테스트</title>
+<meta name="description" content="20가지 연애 상황으로 알아보는 나의 애착유형 심리테스트 결과">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="나의 애착유형 심리테스트 결과">
+<meta property="og:description" content="나는 사랑을 어떻게 받고 싶은 걸까? 나의 애착유형 결과를 확인해보세요">
+<meta property="og:image" content="./heart-thumbnail.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div id="particle-layer"></div>
+
+<div class="page-wrap">
+
+  <header class="site-header">
+    <h1 class="site-title">나의 애착유형 심리테스트</h1>
+    <p class="site-subtitle">나는 사랑을 어떻게 받고 싶은 걸까?</p>
+  </header>
+
+  <div id="result-app">
+
+    <!-- 슬라이드 1 : 기본 결과 (무료 공개) -->
+    <section class="slide active" data-slide="1">
+      <div class="glass-card">
+        <div class="result-emoji" id="r1-emoji">💗</div>
+        <p class="result-category" id="r1-category"></p>
+        <h2 class="result-name" id="r1-name"></h2>
+        <p class="result-oneliner" id="r1-oneliner"></p>
+
+        <div class="section-title">✨ 핵심 특징</div>
+        <ul class="feature-list" id="r1-features"></ul>
+
+        <button id="unlock-btn" class="btn-primary" style="margin-top:22px;">💡 더 자세한 내 마음의 지도 보기</button>
+      </div>
+    </section>
+
+    <!-- 슬라이드 2 : 잠금 해제 대기 -->
+    <section class="slide" data-slide="2">
+      <div class="glass-card">
+        <div class="lock-screen">
+          <div class="lock-icon">🔒</div>
+          <p class="lock-text" id="lock-hint">🪟 쿠팡 창을 닫으면 나머지 결과가 자동으로 공개돼요...</p>
+          <div class="loading-dots"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 슬라이드 3 : 심층 분석 -->
+    <section class="slide" data-slide="3">
+      <div class="glass-card">
+        <div class="section-title">🔍 왜 이런 유형이 됐을까?</div>
+        <p class="section-body" id="r3-root"></p>
+
+        <div class="section-title">💞 연애할 때 나타나는 패턴</div>
+        <p class="section-body" id="r3-pattern"></p>
+
+        <div class="section-title">📊 애착 스탯 그래프</div>
+        <div id="r3-stats"></div>
+
+        <button class="btn-primary slide-next-btn" style="margin-top:20px;">다음 →</button>
+      </div>
+    </section>
+
+    <!-- 슬라이드 4 : 궁합 & 주의사항 -->
+    <section class="slide" data-slide="4">
+      <div class="glass-card">
+        <div class="section-title">💘 가장 잘 맞는 유형 TOP 2</div>
+        <div class="compat-grid" id="r4-best"></div>
+
+        <div class="section-title">⚠️ 가장 조심해야 할 유형</div>
+        <div class="caution-card" id="r4-caution"></div>
+
+        <div class="section-title">📌 연애할 때 주의할 점</div>
+        <ul class="caution-list" id="r4-cautions"></ul>
+
+        <button class="btn-primary slide-next-btn" style="margin-top:20px;">다음 →</button>
+      </div>
+    </section>
+
+    <!-- 슬라이드 5 : 극복 & 성장 로드맵 -->
+    <section class="slide" data-slide="5">
+      <div class="glass-card">
+        <div class="section-title">💪 이 유형의 장점</div>
+        <p class="section-body" id="r5-pros"></p>
+
+        <div class="section-title">🍃 이 유형의 단점</div>
+        <p class="section-body" id="r5-cons"></p>
+
+        <div class="section-title">🌱 안정형으로 가기 위한 실천법</div>
+        <ul class="growth-list" id="r5-growth"></ul>
+
+        <div class="section-title">💌 나에게 전하는 위로</div>
+        <div class="comfort-box" id="r5-comfort"></div>
+
+        <button class="btn-primary slide-next-btn" style="margin-top:20px;">결과 공유하기 →</button>
+      </div>
+    </section>
+
+    <!-- 슬라이드 6 : 공유 페이지 -->
+    <section class="slide" data-slide="6">
+      <div class="glass-card share-card">
+        <div class="section-title" style="justify-content:center;">📮 결과를 친구에게 공유해보세요</div>
+        <div class="share-summary">
+          <div class="result-emoji" id="r6-emoji" style="font-size:48px;">💗</div>
+          <h3 class="result-name" id="r6-name" style="font-size:20px;"></h3>
+          <p class="result-oneliner" id="r6-oneliner" style="font-size:13.5px;"></p>
+        </div>
+
+        <button id="kakao-share-btn" class="btn-kakao">💬 카카오톡으로 공유하기</button>
+        <button id="copy-link-btn" class="btn-secondary">🔗 링크 복사하기</button>
+        <button id="retry-btn" class="btn-secondary">🔄 다시 테스트하기</button>
+      </div>
+    </section>
+
+    <div class="slide-nav">
+      <span class="slide-progress-text" id="slide-progress-text">1 / 6</span>
+    </div>
+
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <p class="disclosure">본 테스트는 재미로 즐기는 심리 콘텐츠이며 전문적인 심리 진단을 대신하지 않습니다.<br>이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+</footer>
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script src="./data.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
