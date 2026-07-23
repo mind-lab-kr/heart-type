@@ -33,6 +33,7 @@ function initQuiz() {
   const startBtn = document.getElementById('start-btn');
   if (!startBtn) return; // index.html이 아니면 종료
 
+  currentQuestion = 0;
   TYPE_IDS.forEach(id => { scores[id] = 0; });
 
   startBtn.addEventListener('click', () => {
@@ -374,4 +375,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initParticles();
   initQuiz();
   initResult();
+});
+
+// 뒤로가기 등으로 캐시된(bfcache) 페이지가 복원되면 이전 결과/진행 상태가
+// 남아있지 않도록 새로고침하여 초기화 로직이 다시 실행되게 한다
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    window.location.reload();
+  }
 });
