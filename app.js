@@ -124,6 +124,14 @@ function initResult() {
   updateSlideProgress();
 
   document.getElementById('unlock-btn').addEventListener('click', handleUnlockClick);
+
+  const openCoupangBtn = document.getElementById('open-coupang-btn');
+  if (openCoupangBtn) {
+    openCoupangBtn.addEventListener('click', () => {
+      openCoupangAndWait();
+    });
+  }
+
   document.querySelectorAll('.slide-next-btn').forEach(btn => {
     btn.addEventListener('click', () => goToSlide(currentSlide + 1));
   });
@@ -142,7 +150,7 @@ function handleUnlockClick() {
     return;
   }
   goToSlide(2);
-  openCoupangAndWait();
+  // 슬라이드2 버튼 클릭 시 쿠팡 열리게 (바로 열지 않음)
 }
 
 // 쿠팡 창을 열고 닫힘을 감지해서 나머지 결과를 공개한다
