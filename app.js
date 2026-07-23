@@ -135,7 +135,6 @@ function initResult() {
   document.querySelectorAll('.slide-next-btn').forEach(btn => {
     btn.addEventListener('click', () => goToSlide(currentSlide + 1));
   });
-  document.getElementById('kakao-share-btn').addEventListener('click', shareKakao);
   document.getElementById('copy-link-btn').addEventListener('click', copyLink);
   document.getElementById('retry-btn').addEventListener('click', () => {
     localStorage.removeItem('heartTypeResult');
@@ -333,39 +332,6 @@ function renderSlide6() {
 }
 
 // ===================== 공유 기능 =====================
-function getIndexUrl() {
-  return new URL('./index.html', window.location.href).href;
-}
-
-function shareKakao() {
-  const t = resultType;
-  const hasKakaoKey = typeof KAKAO_JS_KEY === 'string' && KAKAO_JS_KEY && KAKAO_JS_KEY !== 'YOUR_KAKAO_JAVASCRIPT_KEY';
-
-  if (window.Kakao && hasKakaoKey) {
-    try {
-      if (!window.Kakao.isInitialized()) window.Kakao.init(KAKAO_JS_KEY);
-      window.Kakao.Share.sendDefault({
-        objectType: 'feed',
-        content: {
-          title: `나의 애착유형은 [${t.name}] ${t.emoji}`,
-          description: t.oneLiner,
-          imageUrl: new URL('./heart-thumbnail.jpg', window.location.href).href,
-          link: { mobileWebUrl: window.location.href, webUrl: window.location.href }
-        },
-        buttons: [
-          { title: '나도 테스트하기', link: { mobileWebUrl: getIndexUrl(), webUrl: getIndexUrl() } }
-        ]
-      });
-      return;
-    } catch (e) {
-      // 아래 링크 복사 폴백으로 이어짐
-    }
-  }
-
-  copyLink();
-  alert('카카오톡 공유 설정(KAKAO_JS_KEY)이 아직 완료되지 않아 링크를 복사했어요. 카카오톡에 붙여넣어 공유해보세요!');
-}
-
 function copyLink() {
   const url = window.location.href;
   if (navigator.clipboard && navigator.clipboard.writeText) {
